@@ -1,6 +1,7 @@
 import pandas
 import matplotlib.pyplot as plt
 import seaborn as sns
+import numpy as np
 
 
 def load_file(filename):
@@ -22,7 +23,7 @@ def plot_tests(df, test, filename):
         for key, grp in df.groupby([test_groupby]):
             ax = grp.plot(ax=ax, kind='line', x=test_x, y=score, label=key, style='.-',
                           title='Miara {}, testy {}'.format(score, test_name))
-
+            #ax.set_ylim(0, 1)
         #plt.show()
         plt.savefig('plots/{}-{}-{}.png'.format(filename, test_name, score))
 

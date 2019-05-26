@@ -64,8 +64,8 @@ def main_tests(num_of_tests, filenames, n_neighbors, weights, metrics, splits_si
         stratify = True
         splits = 10
 
-        for k in n_neighbors:
-            for p in metrics:
+        for p in metrics:
+            for k in n_neighbors:
                 results = main_single_tests(num_of_tests, 'files/' + filename, False,
                                             n_neighbors=k, weights=weight, p=p,
                                             splits=splits, stratified=stratify)
@@ -77,8 +77,8 @@ def main_tests(num_of_tests, filenames, n_neighbors, weights, metrics, splits_si
                 if show_mode:
                     print(data)
 
-        for k in n_neighbors:
-            for weight in weights:
+        for weight in weights:
+            for k in n_neighbors:
                 results = main_single_tests(num_of_tests, 'files/' + filename, False,
                                             n_neighbors=k, weights=weight, p=p,
                                             splits=splits, stratified=stratify)
